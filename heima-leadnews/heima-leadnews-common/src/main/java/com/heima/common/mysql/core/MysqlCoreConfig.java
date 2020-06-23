@@ -1,5 +1,6 @@
 package com.heima.common.mysql.core;
 
+import com.heima.common.common.pojo.EsIndexEntity;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +37,6 @@ public class MysqlCoreConfig {
     Boolean helperReasonable = false;//分页合理化
     Boolean supportMethodsArguments = false;//自动根据上面 params 配置的字段中取值
     String params;//pageNum,pageSize,count,pageSizeZero,reasonable，不配置映射的用默认值， 默认值为pageNum=pageNum;pageSize=pageSize;count=countSql;reasonable=reasonable;pageSizeZero=pageSizeZero
-
     /**
      * 这是最快的数据库连接池
      *
