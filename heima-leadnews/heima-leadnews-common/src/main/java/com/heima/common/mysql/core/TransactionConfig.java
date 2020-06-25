@@ -50,7 +50,7 @@ public class TransactionConfig {
      * @param dataSourceTransactionManager
      * @return
      */
-    @Bean("mysqlCoreDataSourceTxAdvice")
+    @Bean
     public TransactionInterceptor mysqlCoreDataSourceTxAdvice(@Qualifier("mysqlCoreDataSourceTransactionManager") DataSourceTransactionManager dataSourceTransactionManager) {
         // 默认事务
         DefaultTransactionAttribute defAttr = new DefaultTransactionAttribute(TransactionDefinition.PROPAGATION_REQUIRED);

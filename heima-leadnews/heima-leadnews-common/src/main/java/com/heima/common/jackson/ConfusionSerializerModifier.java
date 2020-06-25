@@ -9,9 +9,6 @@ import com.heima.model.annotation.IdEncrypt;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 用于过滤序列化时处理的字段
- */
 public class ConfusionSerializerModifier extends BeanSerializerModifier {
 
     @Override
@@ -27,7 +24,7 @@ public class ConfusionSerializerModifier extends BeanSerializerModifier {
             } else if (name.contains("Date")) {
                 writer.assignSerializer(new DateSerializer());
                 newWriter.add(writer);
-            } else {//id  和 有idEncrypt注解的属性都会走这个逻辑  都会进行加密混淆
+            } else {
                 writer.assignSerializer(new ConfusionSerializer());
                 newWriter.add(writer);
             }
