@@ -7,13 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="heima-leadnews-apis" />
         <module name="heima-leadnews-common" />
-        <module name="heima-leadnews-article" />
         <module name="heima-leadnews-utils" />
         <module name="heima-leadnews-model" />
-        <module name="heima-leadnews-apis" />
+        <module name="heima-leadnews-article" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="heimaleadnewshaha" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -22,6 +25,7 @@
       <module name="heima-leadnews-common" options="-parameters" />
       <module name="heima-leadnews-model" options="-parameters" />
       <module name="heima-leadnews-utils" options="-parameters" />
+      <module name="heimaleadnewshaha" options="-parameters" />
     </option>
   </component>
 </project>
