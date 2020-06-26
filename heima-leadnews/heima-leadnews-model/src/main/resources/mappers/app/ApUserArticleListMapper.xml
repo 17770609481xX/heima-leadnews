@@ -12,29 +12,28 @@
         <result column="is_read" property="isRead" javaType="java.lang.Boolean" jdbcType="BIT" />
         <result column="strategy_id" property="strategyId"/>
     </resultMap>
-
     <sql id="Base_Column_List">
-        id, user_id, channel_id, article_id, is_show, recommend_time, is_read, strategy_id
-    </sql>
 
-    <select id="loadArticleIdListByUser" parameterType="map" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List" />
-        from ap_user_article_list
+    id, user_id, channel_id, article_id, is_show, recommend_time, is_read, strategy_id
+  </sql>
+
+    <select id="loadArticleIdListByUser" resultMap="BaseResultMap">
+        select * from ap_user_article_list
         <where>
-            user_id=#{user.id} and is_show=0 and is_read=0
-            <!-- loadmore -->
+            user_id = #{user.id} and is_show = 0 and is_read = 0
             <if test="type != null and type == 1">
-                and recommend_time <![CDATA[<]]> #{dto.minBehotTime}
+                and recommend_time <![CDATA[<]]>  #{dto.minBehotTime}
             </if>
             <if test="type != null and type == 2">
-                and recommend_time <![CDATA[>]]> #{dto.maxBehotTime}
+                and recommend_time <![CDATA[>]]>  #{dto.maxBehotTime}
             </if>
+
             <if test="dto.tag != '__all__'">
-                and channel_id = #{dto.tag}
+               and channel_id = #{dto.tag}
             </if>
         </where>
         limit #{dto.size}
     </select>
+
 
 </mapper>

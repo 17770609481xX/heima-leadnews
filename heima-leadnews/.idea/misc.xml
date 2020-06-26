@@ -5,11 +5,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/heima-leadnews-behavior/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/heima-leadnews-haha/pom.xml" />
         <option value="$PROJECT_DIR$/heima-leadnews-tests/pom.xml" />
       </set>
     </option>

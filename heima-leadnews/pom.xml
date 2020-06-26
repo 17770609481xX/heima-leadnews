@@ -14,7 +14,6 @@
         <module>heima-leadnews-apis</module>
         <module>heima-leadnews-model</module>
         <module>heima-leadnews-article</module>
-        <module>heima-leadnews-haha</module>
     </modules>
 
     <!-- 继承Spring boot工程 -->
@@ -240,13 +239,13 @@
                 <version>${hanlp.version}</version>
             </dependency>
             <!-- 阿里SDK  -->
-            <!--<dependency>
+            <dependency>
                 <groupId>com.baidu</groupId>
                 <artifactId>aip-java-sdk</artifactId>
                 <version>${baidu.version}</version>
                 <scope>system</scope>
                 <systemPath>${project.basedir}/../sdk-jar/baidu/aip-java-sdk-4.11.1.jar</systemPath>
-            </dependency>-->
+            </dependency>
             <!-- fastdfs客服端 -->
             <dependency>
                 <groupId>com.luhuiguo</groupId>
@@ -456,7 +455,6 @@
                 </filters>
             </build>
         </profile>
-
         <profile>
             <id>prod</id>
             <build>
@@ -466,4 +464,6 @@
             </build>
         </profile>-->
     </profiles>
+
+
 </project>
