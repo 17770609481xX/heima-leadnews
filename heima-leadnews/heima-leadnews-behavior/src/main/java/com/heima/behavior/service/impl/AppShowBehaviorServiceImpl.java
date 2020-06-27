@@ -27,7 +27,6 @@ public class AppShowBehaviorServiceImpl implements AppShowBehaviorService {
     @Autowired
     private ApShowBehaviorMapper apShowBehaviorMapper;
 
-    //保存用户行为
     @Override
     public ResponseResult saveShowBehavior(ShowBehaviorDto dto) {
         //获取用户信息，获取设备id
@@ -66,6 +65,8 @@ public class AppShowBehaviorServiceImpl implements AppShowBehaviorService {
             integers.toArray(articleIds);
             apShowBehaviorMapper.saveShowBehavior(articleIds,apBehaviorEntry.getId());
         }
+
+
         return ResponseResult.okResult(0);
     }
 
