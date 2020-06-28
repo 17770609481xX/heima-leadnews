@@ -340,7 +340,7 @@
                     <useDefaultDelimiters>true</useDefaultDelimiters>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
                 <executions>
@@ -349,7 +349,7 @@
                             <goal>revision</goal>
                         </goals>
                     </execution>
-                </executions><!--$NO-MVN-MAN-VER$-->
+                </executions>&lt;!&ndash;$NO-MVN-MAN-VER$&ndash;&gt;
                 <configuration>
                     <dotGitDirectory>../../.git</dotGitDirectory>
                     <dateFormat>yyyy-MM-dd HH:mm:ss</dateFormat>
@@ -357,7 +357,7 @@
                     <abbrevLength>8</abbrevLength>
                     <generateGitPropertiesFile>true</generateGitPropertiesFile>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <!-- PMD插件 -->
             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
