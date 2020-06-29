@@ -11,6 +11,7 @@ public class FollowBehaviorDto {
     // 文章ID
     @IdEncrypt
     Integer articleId;
+    //关注用户id
     @IdEncrypt
     Integer followId;
 }

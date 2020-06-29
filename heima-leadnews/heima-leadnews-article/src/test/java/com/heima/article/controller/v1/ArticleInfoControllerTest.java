@@ -3,6 +3,9 @@ package com.heima.article.controller.v1;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.heima.article.ArticleJarApplication;
 import com.heima.model.article.dtos.ArticleInfoDto;
+import com.heima.model.user.pojos.ApUser;
+import com.heima.utils.threadlocal.AppThreadLocalUtils;
+import org.apache.catalina.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +34,21 @@ public class ArticleInfoControllerTest {
         ArticleInfoDto articleInfoDto=new ArticleInfoDto();
         articleInfoDto.setArticleId(10120);
         MockHttpServletRequestBuilder content = MockMvcRequestBuilders.post("/api/v1/article/load_article_info")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(mapper.writeValueAsBytes(articleInfoDto));
+        mockMvc.perform(content).andExpect(MockMvcResultMatchers.status().isOk()).andDo(MockMvcResultHandlers.print());
+    }
+
+    @Test
+    public void testLoadArticleBehavior() throws Exception {
+        ArticleInfoDto articleInfoDto=new ArticleInfoDto();
+        articleInfoDto.setArticleId(10121);
+        articleInfoDto.setAuthorId(2104);
+//        articleInfoDto.setEquipmentId(1);
+        ApUser user=new ApUser();
+        user.setId(2l);
+        AppThreadLocalUtils.setUser(user);
+        MockHttpServletRequestBuilder content = MockMvcRequestBuilders.post("/api/v1/article/load_article_behavior")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(mapper.writeValueAsBytes(articleInfoDto));
         mockMvc.perform(content).andExpect(MockMvcResultMatchers.status().isOk()).andDo(MockMvcResultHandlers.print());
