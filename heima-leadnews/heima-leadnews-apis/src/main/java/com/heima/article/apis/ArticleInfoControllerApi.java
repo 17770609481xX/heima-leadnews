@@ -7,7 +7,7 @@ public interface ArticleInfoControllerApi {
 
     /**
      * 加載首頁详情
-     * @param dto 封装参数对象
+     * @param
      * @return 文章详情
      */
     ResponseResult loadArticleInfo(ArticleInfoDto dto);

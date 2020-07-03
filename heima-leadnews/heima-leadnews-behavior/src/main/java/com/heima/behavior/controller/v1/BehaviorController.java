@@ -31,7 +31,7 @@ public class BehaviorController implements BehaviorControllerApi {
 
     //保存用户阅读文章的行为
     @Override
-    @RequestMapping("/save_behavior")
+    @PostMapping("/show_behavior")
     public ResponseResult saveShowBehavior(@RequestBody ShowBehaviorDto dto) {
         return appShowBehaviorService.saveShowBehavior(dto);
     }

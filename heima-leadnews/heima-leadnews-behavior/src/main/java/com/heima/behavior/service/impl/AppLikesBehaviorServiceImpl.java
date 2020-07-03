@@ -31,17 +31,17 @@ public class AppLikesBehaviorServiceImpl implements AppLikesBehaviorService {
     //保存喜欢行为操作
     @Override
     public ResponseResult saveLikesBehavior(LikesBehaviorDto dto) {
+        //获取用户信息，获取设备id
         ApUser user = AppThreadLocalUtils.getUser();
-        // 用户和设备不能同时为空
-        if(user==null&& dto.getEquipmentId()==null){
+        //根据当前的用户信息或设备id查询行为实体 ap_behavior_entry
+        if(user==null&&dto.getEquipmentId()==null){
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE);
         }
         Long userId = null;
         if(user!=null){
-            userId = user.getId();
+            userId=user.getId();
         }
-        ApBehaviorEntry apBehaviorEntry = apBehaviorEntryMapper.selectByUserIdOrEquipemntId(userId, dto.getEquipmentId());
-        // 行为实体找以及注册了，逻辑上这里是必定有值得，除非参数错误
+        ApBehaviorEntry apBehaviorEntry = apBehaviorEntryMapper.selectByUserIdOrEquipemntId(userId,dto.getEquipmentId());
         if(apBehaviorEntry==null){
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
         }
@@ -53,6 +53,8 @@ public class AppLikesBehaviorServiceImpl implements AppLikesBehaviorService {
         alb.setType(dto.getType());
         alb.setOperation(dto.getOperation());
         alb.setBurst(BurstUtils.encrypt(alb.getId(),alb.getBehaviorEntryId()));
-        return ResponseResult.okResult(apLikesBehaviorMapper.insert(alb));
+
+        int insert = apLikesBehaviorMapper.insert(alb);
+        return ResponseResult.okResult(insert);
     }
 }

@@ -52,7 +52,7 @@ public class AppShowBehaviorServiceImpl implements AppShowBehaviorService {
         //根据行为实体id和文章列表id查询app行为表  ap_show_behavior
         List<ApShowBehavior> apShowBehaviors = apShowBehaviorMapper.selectListByEntryIdAndArticleIds(apBehaviorEntry.getId(),articleIds);
         //数据的过滤，需要删除表中已经存在的文章id
-        List<Integer> integers = Arrays.asList(articleIds);
+        List<Integer> integers = new ArrayList<>(Arrays.asList(articleIds));
         if(!apShowBehaviors.isEmpty()){
             apShowBehaviors.forEach(itemm->{
                 Integer articleId = itemm.getArticleId();

@@ -47,12 +47,14 @@ public class AppArticleInfoServiceImpl implements AppArticleInfoService {
 
     @Override
     public ResponseResult getArticleInfo(Integer articleId) {
+        System.out.println(articleId);
         if (articleId==null || articleId<=1){
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
         }
         Map<String,Object> data=new HashMap<>();
         //根据文章id查找config信息
         ApArticleConfig apArticleConfig = apArticleConfigMapper.selectByArticleId(articleId);
+        System.out.println(apArticleConfig);
         //查看文章是否删除
         if (apArticleConfig==null){
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);

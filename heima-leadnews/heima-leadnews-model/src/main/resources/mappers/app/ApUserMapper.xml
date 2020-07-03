@@ -17,8 +17,15 @@
     <sql id="Base_Column_List" >
     id, salt, name, password, phone, image, sex, is_certification, is_identity_authentication,
     status, flag
-  </sql>
+    </sql>
+
     <select id="selectById" resultMap="BaseResultMap">
         select  <include refid="Base_Column_List" /> from ap_user where id = #{id}
+    </select>
+
+    <select id="selectByApPhone" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ap_user where phone = #{phone} limit 1;
     </select>
 </mapper>

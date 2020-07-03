@@ -11,6 +11,10 @@ public interface ApLikesBehaviorMapper {
      */
     ApLikesBehavior selectLastLike(@Param("burst") String burst, @Param("objectId") Integer objectId,@Param("entryId") Integer entryId, @Param("type")Short type);
 
-    //喜欢点赞
+    /**
+     * 保存
+     * @param record
+     * @return
+     */
     int insert(ApLikesBehavior record);
 }

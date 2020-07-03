@@ -21,8 +21,11 @@ public class ArticleInfoController implements ArticleInfoControllerApi {
     @Override
     @PostMapping("/load_article_info")
     public ResponseResult loadArticleInfo(@RequestBody ArticleInfoDto dto) {
+        System.out.println(dto);
         return appArticleInfoService.getArticleInfo(dto.getArticleId());
     }
+
+
 
     @Override
     @PostMapping("/load_article_behavior")
