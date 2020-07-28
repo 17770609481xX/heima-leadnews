@@ -17,6 +17,8 @@
         <module>service-mycat</module>
         <module>heima-leadnews-user</module>
         <module>heima-leadnews-login</module>
+        <module>heima-leadnews-media</module>
+        <module>heima-leadnews-admin</module>
     </modules>
 
     <!-- 继承Spring boot工程 -->
@@ -249,7 +251,7 @@
                 <scope>system</scope>
                 <systemPath>${project.basedir}/../sdk-jar/baidu/aip-java-sdk-4.11.1.jar</systemPath>
             </dependency>-->
-            <!-- fastdfs客服端 -->
+                <!-- fastdfs客服端 -->
             <dependency>
                 <groupId>com.luhuiguo</groupId>
                 <artifactId>fastdfs-spring-boot-starter</artifactId>

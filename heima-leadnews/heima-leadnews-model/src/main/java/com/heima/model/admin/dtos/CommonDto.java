@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.util.List;
 
+//类用于接收前端传入的接口参数（包括CRUD接口的参数）
 @Data
 public class CommonDto {
 
